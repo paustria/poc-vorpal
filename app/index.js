@@ -19,13 +19,18 @@ vorpal
 
 vorpal
   .command('users', 'Get users')
-  .action(function(args, callback) {
-    fetch(`https://api.github.com/users`)
+  .action((args, callback) => {
+    try {
+      fetch('https://api.github.com/users')
       .then(res => res.json())
       .then(body => {
         console.log(chalk.green(JSON.stringify(body)));
         callback();
       });
+    } catch (e) {
+      console.log(chalk.red(e));
+      callback();
+    }
   });
 
 vorpal
