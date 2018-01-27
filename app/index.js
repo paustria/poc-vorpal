@@ -1,12 +1,28 @@
 const vorpal = require('vorpal')();
+const fetch = require('node-fetch');
 
 vorpal
-  .command('foo', 'Outputs "bar".')
+  .command('user <user>', 'Get user')
   .action(function(args, callback) {
-    this.log('bar');
-    callback();
+    fetch(`https://api.github.com/users/${args.user}`)
+      .then(res => res.json())
+      .then(body => {
+        console.log(body)
+        callback();
+      });
   });
 
 vorpal
-  .delimiter('myapp$')
+  .command('users', 'Get users')
+  .action(function(args, callback) {
+    fetch(`https://api.github.com/users`)
+      .then(res => res.json())
+      .then(body => {
+        console.log(body)
+        callback();
+      });
+  });
+
+vorpal
+  .delimiter('github-connect$')
   .show();
