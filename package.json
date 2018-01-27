@@ -1,0 +1,22 @@
+{
+  "name": "poc-vorpal",
+  "version": "1.0.0",
+  "description": "This is proof of concept of node command-line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paustria/poc-vorpal.git"
+  },
+  "author": "Phily Austria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paustria/poc-vorpal/issues"
+  },
+  "homepage": "https://github.com/paustria/poc-vorpal#readme",
+  "dependencies": {
+    "vorpal": "^1.12.0"
+  }
+}
