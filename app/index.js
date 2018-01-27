@@ -1,4 +1,5 @@
 const vorpal = require('vorpal')();
+const chalk = require('chalk');
 const fetch = require('node-fetch');
 
 vorpal
@@ -7,7 +8,11 @@ vorpal
     fetch(`https://api.github.com/users/${args.user}`)
       .then(res => res.json())
       .then(body => {
-        console.log(body)
+        if (body.message==="Not Found") {
+          console.log(chalk.red(JSON.stringify(body)));
+        } else {
+          console.log(chalk.green(JSON.stringify(body)));
+        }
         callback();
       });
   });
@@ -18,7 +23,7 @@ vorpal
     fetch(`https://api.github.com/users`)
       .then(res => res.json())
       .then(body => {
-        console.log(body)
+        console.log(chalk.green(JSON.stringify(body)));
         callback();
       });
   });

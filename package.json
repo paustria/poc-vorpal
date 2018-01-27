@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/paustria/poc-vorpal#readme",
   "dependencies": {
+    "chalk": "^2.3.0",
     "node-fetch": "^1.7.3",
     "vorpal": "^1.12.0"
   }
