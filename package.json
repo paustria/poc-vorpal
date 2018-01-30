@@ -19,6 +19,7 @@
   "homepage": "https://github.com/paustria/poc-vorpal#readme",
   "dependencies": {
     "babel-register": "^6.26.0",
+    "bluebird": "^3.5.1",
     "chalk": "^2.3.0",
     "node-fetch": "^1.7.3",
     "vorpal": "^1.12.0"
